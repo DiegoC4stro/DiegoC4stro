@@ -1,0 +1,139 @@
+##Olá, menu desenvolvido para ACCELL-PPP para uso via terminal linux.
+#Explorando o modulo vlanmon
+
+#Contato: dctecsolution@gmail.com
+
+#!/bin/bash
+clear
+Menu(){
+   echo "------------------------------------------"
+   echo "    MENU ACCELL-PPP          "
+   echo "------------------------------------------"
+   echo
+   echo "[ 1 ] LISTAR USUARIOS V403"
+   echo "[ 2 ] LISTAR USUARIOS V404"
+   echo "[ 3 ] LISTAR USUARIOS V405"
+   echo "[ 4 ] LISTAR USUARIOS V406"
+   echo "[ 5 ] LOG V403"
+   echo "[ 6 ] LOG V404"
+   echo "[ 7 ] LOG V405"
+   echo "[ 8 ] LOG V406"
+   echo "[ 9 ] DESCONECTAR CLIENTE"
+   echo
+   echo -n "Qual a opcao desejada ? "
+   read opcao
+   case $opcao in
+      1) ipoe ;;
+      2) litoral ;;
+      3) ppoe1 ;;
+      4) ipoelitoral ;;
+      5) ipoe_log ;;
+      6) ppoe_lit_log ;;
+      7) ppoe_1_log ;;
+      8) ipoe_lito_log ;;
+      9) desconectar ;;
+      *) "Opcao desconhecida." ; echo ; Principal ;;
+   esac
+}
+ipoe() {
+accel-cmd -p 2001 show sessions
+
+Menu
+}
+
+litoral() {
+accel-cmd -p 2002 show sessions
+
+Menu
+}
+
+ppoe1() {
+accel-cmd -p 2003 show sessions
+
+Menu
+}
+
+ipoelitoral() {
+accel-cmd -p 2004 show sessions
+
+Menu
+}
+
+ipoe_log() {
+echo "Digite os 4 ultimos digitos do MAC"
+read busca1
+echo "$busca1"
+tail -f /var/log/accel-ppp/debug-vlan403.log | grep $busca1
+
+Menu
+}
+ppoe_lit_log() {
+echo "Digite usuario PPOE"
+read busca2
+echo "$busca2"
+tail -f /var/log/accel-ppp/debug-vlan404.log | grep $busca2
+
+Menu
+}
+ipoe_lito_log() {
+echo "Digite os 4 ultimos digitos do MAC"
+read busca3
+echo "$busca3"
+tail -f /var/log/accel-ppp/debug-vlan406.log | grep $busca3
+
+Menu
+}
+ppoe_1_log() {
+echo "Digite usuario PPOE"
+read busca4
+echo "$busca4"
+tail -f /var/log/accel-ppp/debug-vlan405.log | grep $busca4
+
+Menu
+}
+desconectar() {
+echo "Selecione a vlan:  "
+
+   echo "[ 1 ] 403"
+   echo "[ 2 ] 404"
+   echo "[ 3 ] 405"
+   echo "[ 4 ] 406"
+
+read vlan
+
+echo "Informe a interface virtual do cliente: "
+
+read interface
+
+ case $vlan in
+        1) A ;;
+        2) B ;;
+        3) C ;;
+        4) D ;;
+ esac
+}
+
+A(){
+accel-cmd -p 2001 terminate if $interface hard
+
+Menu
+}
+
+B() {
+accel-cmd -p 2002 terminate if $interface hard
+
+Menu
+}
+
+C() {
+accel-cmd -p 2003 terminate if $interface hard
+
+Menu
+}
+
+D() {
+accel-cmd -p 2004 terminate if $interface hard
+
+Menu
+}
+Menu
