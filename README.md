@@ -2,6 +2,8 @@
 - 👀 I’m interested in Networking
 - 🌱 I’m currently learning Linux
 - 📫 How to reach me diegdk@gmail.com
+- 📫 How to reach me dctecsolution@gmail.com
+
 
 <!---
 DiegoC4stro/DiegoC4stro is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
