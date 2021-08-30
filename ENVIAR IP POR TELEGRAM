@@ -5,6 +5,8 @@
 #                         dctecsolution@gmail.com                                           #
 #############################################################################################
 
+!!!!!!!!!!!!!!!!!!ATENÇÃO USEM SEUS PROPRIOS BOT!!!!!!!!!!!!!!!!!!!!!!!!!
+
 
 /system script
 add dont-require-permissions=no name="IP POR TELEGRAM" owner=diego policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source="ip cloud set ddns-enabled=yes ddns-update-int\
