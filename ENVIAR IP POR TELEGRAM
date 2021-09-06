@@ -16,4 +16,4 @@ add dont-require-permissions=no name="IP POR TELEGRAM" owner=diego policy=ftp,re
     \n:global myIP [ :put [ip cloud get public-address ] ]; \r\
     \n:global nomedarb [/system identity get name];\r\
     \n###REALIZANDO ENVIO######\r\
-    \ntool fetch url=\"https://api.telegram.org/bot1488045364:AAElBMQbeHnFJb60QZzUuluskto7asKCyYg/sendMessage\?chat_id=296885221&text=\$nomedarb \$myIP\" keep-result=no"
+    \ntool fetch url=\"COLE SEU TOKEN AQUI/sendMessage\?chat_id=CHATDOGRUPOAQUI&text=\$nomedarb \$myIP\" keep-result=no"
