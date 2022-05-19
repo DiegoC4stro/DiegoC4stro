@@ -1,5 +1,5 @@
-ELASTIC 8.X
-
+kibana e elastic ip: 172.16.15.252
+Zabbix: 172.16.15.251
 
 root@debian:~# egrep -v "^#|^$" /etc/elasticsearch/elasticsearch.yml
 cluster.name: zabbixELK
@@ -105,7 +105,7 @@ root@debian:~# curl -XGET 'localhost:9200'
   "cluster_name" : "zabbixELK",
   "cluster_uuid" : "bIlsaSvEScqJN6E8F5Zy0g",
   "version" : {
-    "number" : "8.2.0",
+    "number" : "7.2.0",
     "build_flavor" : "default",
     "build_type" : "deb",
     "build_hash" : "b174af62e8dd9f4ac4d25875e9381ffe2b9282c5",
